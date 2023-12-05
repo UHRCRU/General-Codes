@@ -1,0 +1,50 @@
+SELECT TOP (1000) [YEAR]
+      ,[MONTH]
+      ,[SUPPLIER]
+      ,[ITEM CODE]
+      ,[ITEM DESCRIPTION]
+      ,[ITEM TYPE]
+      ,[RETAIL SALES]
+      ,[RETAIL TRANSFERS]
+      ,[WAREHOUSE SALES]
+  FROM [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+  select  distinct[SUPPLIER], HASHBYTES('MD5', [SUPPLIER]) as SUPPLIER_key from [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+  select distinct [ITEM TYPE], HASHBYTES('MD5', [ITEM TYPE]) as ITEM_key  from [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+  select w.year, w.month, DATEFROMPARTS(year, month,1) as date_key from [Demo1].[dbo].[Warehouse_and_Retail_Sales] w
+  Select 
+  CAST([RETAIL SALES] as DECIMAL(32,10)) as RETAIL_SALES
+  --CAST([RETAIL TRANSFERS] as DECIMAL(32,10)) as RETAIL_TRANSFERS
+  --CAST([WAREHOUSE SALES] as DECIMAL(32,10)) as RETAIL_SALES
+ from [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+ Select 
+ [RETAIL SALES]  as RETAIL_SALES
+  ,[RETAIL TRANSFERS] as RETAIL_TRANSFERS
+  ,[WAREHOUSE SALES] as WAREHOUSE_SALES
+  ,HASHBYTES('MD5', [SUPPLIER]) as SUPPLIER_key 
+  ,HASHBYTES('MD5', [ITEM TYPE]) as ITEM_key 
+  ,DATEFROMPARTS(year, month,1) as date_key 
+ INTO [Demo1].[dbo].[fct_Warehouse_and_Retail_Sales]
+ from [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+   select  distinct[SUPPLIER], HASHBYTES('MD5', [SUPPLIER]) as SUPPLIER_key 
+   INTO [Demo1].[dbo].[dim_SUPPLIER]
+   from [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+  select distinct [ITEM TYPE], HASHBYTES('MD5', [ITEM TYPE]) as ITEM_key  
+  INTO [Demo1].[dbo].[dim_ITEM]
+  from [Demo1].[dbo].[Warehouse_and_Retail_Sales]
+
+
+  select w.year, w.month, DATEFROMPARTS(year, month,1) as date_key 
+  INTO [Demo1].[dbo].[dim_TIME]
+  from [Demo1].[dbo].[Warehouse_and_Retail_Sales] w
