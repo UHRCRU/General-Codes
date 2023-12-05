@@ -1,0 +1,15 @@
+
+body{
+    font-family:'Courier New', monospace;
+    background-color : black;
+    color: lime;
+    
+}
+.grid-container {
+
+}
+.grid-item {
+  border: 1px solid darkblue;
+  width: 100px;
+  height: 100px;
+}

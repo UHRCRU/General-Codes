@@ -1,0 +1,52 @@
+
+body{
+    font-family:'Courier New', monospace;
+    background-color : black;
+    color: lime;
+    
+}
+section {
+    box-sizing: border-box;
+    border: 1px solid blue;
+    float: left;    
+    width: 100%
+  }
+
+  div {
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    
+  }
+  
+  .left {
+    float: left;
+    font-family: 'courier new';
+    color: lime;
+    position: relative;
+    border: 3px solid red;
+    background-color: gray;
+    padding: 30px;
+    font-size: 80px;
+    text-align: center;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .right {
+    float: right;
+    font-family: 'courier new';
+    color: lime;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 3px solid red;
+    background-color: gray;
+    padding: 30px;
+    font-size: 80px;
+    text-align: center;
+    margin: 5px;
+    width: 110px;
+    height: 110px;
+  }

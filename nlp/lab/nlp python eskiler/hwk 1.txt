@@ -1,0 +1,12 @@
+text1 = """10 WORK \t lecture
+11 PRIV    Breakfast
+12   WORK  laboratories"""
+
+text2 = """
+<body>
+
+ <h1>My First Heading</h1>
+ <p>My first paragraph.</p>
+
+</body>
+"""

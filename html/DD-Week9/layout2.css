@@ -1,0 +1,26 @@
+.container {  display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-areas:
+      "Header Header Header"
+      "pr1 pr2 pr3"
+      "pr1 pr2 pr3"
+      "pr1 pr2 pr3"
+      "footer footer footer"
+      "footer footer footer";
+  }
+  
+  .Header { grid-area: Header; }
+  
+  .pr1 { grid-area: pr1; }
+  
+  .pr2 { grid-area: pr2; }
+  
+  .pr3 { grid-area: pr3; }
+  
+  .footer { grid-area: footer; }
+  

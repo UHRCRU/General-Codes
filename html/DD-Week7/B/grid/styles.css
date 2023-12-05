@@ -1,0 +1,36 @@
+
+body{
+    font-family:'Courier New', monospace;
+    background-color : black;
+    color: lime;
+    
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: darkred;
+  padding: 10px;
+  float: left;
+}
+.grid-item {
+  background-color: darkcyan;
+  border: 1px solid darkblue;
+  padding: 20px;
+  font-size: 80px;
+  text-align: center;
+  
+  width: 100px;
+  height: 100px;
+}
+.U {
+  background-color: darkcyan;
+  border: 1px solid darkblue;
+  padding: 20px;
+  font-size: 80px;
+  text-align: center;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  width: 110px;
+  height: 110px;
+}

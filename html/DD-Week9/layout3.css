@@ -1,0 +1,30 @@
+.container {  display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-areas:
+      "header header header header header"
+      "paragraph paragraph paragraph paragraph paragraph"
+      "paragraph paragraph paragraph paragraph paragraph"
+      "paragraph paragraph paragraph paragraph paragraph"
+      "ft1 ft2 ft3 ft4 ft5"
+      "ft1 ft2 ft3 ft4 ft5";
+  }
+  
+  .header { grid-area: header; }
+  
+  .paragraph { grid-area: paragraph; }
+  
+  .ft1 { grid-area: ft1; }
+  
+  .ft2 { grid-area: ft2; }
+  
+  .ft3 { grid-area: ft3; }
+  
+  .ft4 { grid-area: ft4; }
+  
+  .ft5 { grid-area: ft5; }
+  

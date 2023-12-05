@@ -1,0 +1,76 @@
+Python 3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> type(raw)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'raw' is not defined
+>>> import nltk
+>>> from nltk.book import *
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+>>>
+>>> import nltk, re, pprint
+>>> from nltk import word_tokenize
+>>> from urllib import request
+>>> url = "http://www.gutenberg.org/files/2554/2554-0.txt"
+>>> response = request.urlopen(url)
+>>> raw = response.read().decode('utf8')
+>>> type(raw)
+<class 'str'>
+>>> len(raw)
+1176812
+>>> raw[:75]
+'\ufeffThe Project Gutenberg eBook of Crime and Punishment, by Fyodor Dostoevsky\r'
+>>> tokens = word_tokenize(raw)
+>>> type(tokens)
+<class 'list'>
+>>> len(tokens)
+257058
+>>> tokens[:10]
+['\ufeffThe', 'Project', 'Gutenberg', 'eBook', 'of', 'Crime', 'and', 'Punishment', ',', 'by']
+>>> text = nltk.Text(tokens)
+>>> type(text)
+<class 'nltk.text.Text'>
+>>> text[1024:1062]
+['insight', 'impresses', 'us', 'as', 'wisdom', '...', 'that', 'wisdom', 'of', 'the', 'heart', 'which', 'we', 'seek', 'that', 'we', 'may', 'learn', 'from', 'it', 'how', 'to', 'live', '.', 'All', 'his', 'other', 'gifts', 'came', 'to', 'him', 'from', 'nature', ',', 'this', 'he', 'won', 'for']
+>>> text.collocations()
+Katerina Ivanovna; Pyotr Petrovitch; Pulcheria Alexandrovna; Avdotya
+Romanovna; Rodion Romanovitch; Marfa Petrovna; Sofya Semyonovna; old
+woman; Project Gutenberg-tm; Porfiry Petrovitch; Amalia Ivanovna;
+great deal; young man; Nikodim Fomitch; Project Gutenberg; Ilya
+Petrovitch; Andrey Semyonovitch; Hay Market; Dmitri Prokofitch; Good
+heavens
+>>> raw.find("PART I")
+5575
+>>> raw.rfind("End of Project Gutenberg's Crime")
+-1
+>>> raw = raw[5338:1157743]
+>>> raw.find("PART I")
+237
+>>> url = "http://news.bbc.co.uk/2/hi/health/2284783.stm"
+>>> html = request.urlopen(url).read().decode('utf8')
+>>> html[:60]
+'<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN'
+>>> from bs4 import BeautifulSoup
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'bs4'
+>>> raw.find("PART I")
+237
+>>> raw.find("PART I")
+237
+>>> raw.find("PART I")
+237
+>>> raw.find("PART I")
+237
