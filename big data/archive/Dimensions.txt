@@ -1,0 +1,27 @@
+Time Dimension:
+
+Release date
+Average Playtime Two Weeks
+Average Playtime Forever
+ 
+Product Dimension:
+AppID -> Number
+Name 
+Estimated Owners
+Required Age
+Price	
+DLC count
+Categories
+Genres
+Tags	
+Achievement Numbers
+Positive Votes
+Negative Votes
+
+
+Company Dimension:
+Publisher
+Developer
+Support Email
+//suggested dimensions
+//Required age , Estimated owners, release date, Publisher

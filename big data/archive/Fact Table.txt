@@ -1,0 +1,21 @@
+Fact Table
+
+AppID	
+Name
+Release date
+Estimated owners	
+Peak CCU	
+Required age	
+Price	
+DLC count	
+Support email	
+Positive	
+Negative	
+Achievements	
+Average playtime forever	
+Average playtime two weeks		
+Developers	
+Publishers	
+Categories	
+Genres	
+
